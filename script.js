@@ -40,9 +40,11 @@ function startedGame() {
 
 function rendergame(){
     cardEl.textContent = `Cards: `;
+
     for (let i = 0; i< myCards.length; i++) {
        cardEl.textContent += `${myCards[i]} `;  
     }
+
     sumElement.textContent = "Sum: " + sum;
     if (sum < 21) {
         message = "Do you want to draw a new card";
@@ -63,7 +65,7 @@ newCard.addEventListener("click", function(){
         let card = getRandomCard();
         sum += card;
         myCards.push(card);
-        startedGame();
+        rendergame();
     }
     
 })
